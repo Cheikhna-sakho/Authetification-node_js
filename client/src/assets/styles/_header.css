@@ -1,0 +1,14 @@
+header{
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+
+
+/* ***********NAV*********** */
+.nav-ul{
+    gap: 25px;
+}
+.nav-item{
+    cursor: pointer;
+}
