@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import AuthForm from './AuthForm';
-import Champ from './Champ';
+import Champ from '../../models/Champ';
 
 const RegisterForm = () => {
     const navigate = useNavigate();
