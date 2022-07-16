@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom'
 const Nav = () => {
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
-    const navItems = token ? [
-        { title: "Accueil", handleClick: function () { return navigate("/home") } },
-        { title: "Profil", handleClick: function(){return console.log("Profil");} },
-        { title: "Déconnexion", handleClick: function () { 
+    const navItems = token && [
+        new Items("Accueil", function () { return navigate("/home") }),
+        new Items("Profil", function () { return console.log("Profil"); }),
+        new Items("Déconnexion", function () {
             localStorage.removeItem('token');
-            return navigate("/") } },
-    ] : [{   title: "", handleClick: function(){}}];
+            return navigate("/")
+        }),
+    ]
 
     return (
         <nav>
@@ -19,5 +20,4 @@ const Nav = () => {
         </nav>
     )
 }
-
-export default Nav
+export default Nav;
